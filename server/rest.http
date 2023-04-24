@@ -1,0 +1,105 @@
+### REGISTER 
+POST http://localhost:8800/api/auth/register
+Content-Type: application/json
+
+{
+  "username": "user1",
+  "email": "user1@user.com",
+  "password": "user1"
+}
+
+### LOGIN 
+POST http://localhost:8800/api/auth/login
+Content-Type: application/json
+
+{
+  "email": "user2@user.com",
+  "password": "user2"
+}
+
+### UPDATE USER 
+PUT http://localhost:8800/api/users/643d48899f6b6fd2b28bd9d2
+Content-Type: application/json
+
+{
+  "desc": "Hello this is the update",
+  "userId": "643d48899f6b6fd2b28bd9d2"
+}
+
+### UPDATE USER 
+DELETE http://localhost:8800/api/users/643d19bf08392277397a4373
+Content-Type: application/json
+
+{
+  "userId": "643d19bf08392277397a4373"
+}
+
+### GET 
+GET http://localhost:8800/api/users/643d6b7d30d9d49d98637f42
+
+### FOLLOW USER 
+PUT http://localhost:8800/api/users/643d6b7d30d9d49d98637f42/follow
+Content-Type: application/json
+
+{
+  "userId": "643d6b7330d9d49d98637f40"
+}
+
+### FOLLOW USER 
+PUT http://localhost:8800/api/users/643d6b7330d9d49d98637f40/unfollow
+Content-Type: application/json
+
+{
+  "userId": "643d6b7d30d9d49d98637f42"
+}
+
+### POST ROUTES
+### POST A POST
+POST http://localhost:8800/api/posts/
+Content-Type: application/json
+
+{
+  "userId": "643d6b7330d9d49d98637f40",
+  "desc": "Hey!!! This is my fourth post from user2",
+  "img": "user2imgage.png"
+}
+
+### UPDATE A POST
+PUT http://localhost:8800/api/posts/643d82a5cd55f30bdb5f7da7
+Content-Type: application/json
+
+{
+  "userId": "643d6b7330d9d49d98637f40",
+  "desc": "Hey!!! This is my updated post from user2",
+  "img": "updated_imgage2.png"
+}
+
+### DELETE A POST
+DELETE http://localhost:8800/api/posts/643d82a5cd55f30bdb5f7da7
+Content-Type: application/json
+
+{
+  "userId": "643d6b7330d9d49d98637f40",
+  "desc": "Hey!!! This is my updated post from user2",
+  "img": "updated_imgage2.png"
+}
+
+### LIKE/DISLIKE A POST
+PUT http://localhost:8800/api/posts/643d83cdcd55f30bdb5f7da9/like
+Content-Type: application/json
+
+{
+  "userId": "643d6b7330d9d49d98637f40"
+}
+
+### GET A POST
+GET http://localhost:8800/api/posts/643d83cdcd55f30bdb5f7da9
+
+### GET TIMELINE
+GET http://localhost:8800/api/posts/timeline/all
+Content-Type: application/json
+
+{
+  "userId": "643d6b7d30d9d49d98637f42"
+}
+
